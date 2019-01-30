@@ -37,12 +37,15 @@ Copy *(use the button)* and paste down the **webhook url**, as you'll need this 
 
 ### 3. Using a Discord Webhook with DiscordHook
 
-First, we must `require` the program in lua, to be able to access its functions, put this in the beginning of your pogram: *(It assumes the DiscordHook.lua file is in the root of your filesystem)*
+First, we must `require` the program in lua, to be able to access its functions, put this in the beginning of your pogram:
+*(It assumes the DiscordHook.lua file is in the root of your filesystem)*
 ```lua
 local DiscordHook = require("DiscordHook")
 ```
 
-At some point we want to start sending stuff to Discord. Before we can do this, we must first make a *webhook object*. the `createWebhook(<string url>)` function will check if the webhook url is valid and reachable. The first return value is `boolean success` and the second value is either the `webhook object` if the creation succeeded or `string error-message` if the creation failed. *(For example, when the url was invalid, http is blocked or Discord is ratelimiting your IP)*
+At some point we want to start sending stuff to Discord. Before we can do this, we must first make a *webhook object*.
+The `createWebhook(<string url>)` function will check if the webhook url is valid and reachable.
+The first return value is `boolean success` and the second value is either the `webhook object` if the creation succeeded or `string error-message` if the creation failed. *(For example, when the url was invalid, http is blocked or Discord is ratelimiting your IP)*
 ```lua
 local success, hook = DiscordHook.createWebhook("https://discordapp.com/api/webhooks/... (THE URL YOU GOT FROM DISCORD)")
 if not success then
@@ -53,7 +56,7 @@ end
 ```
 
 Now, let's send some messages! There are various methods available with one or more arguments.
-Meanings: **<required argument> [optional argument]**
+Meanings: **`<required argument> [optional argument]`**
 ```lua
 -- Sending normal plain good ol' messages:
 hook.send(<string message>, [string username], [string avatarurl])
@@ -67,5 +70,7 @@ hook.sendEmbed(<string message>, [string title], [string description], [string h
 All functions return a *boolean* - `true` if the webhook executed without problems or `false` if the webhook failed (for example, when Discord rejected an invalid embed.)
 
 **Note:** By Discord's rules, an embed must *atleast* either have a title or description, but not neccecarily both.
-Fill arguments you don't want with `nil`, for example: `hook.sendEmbed("", nil, "Hello!", nil, 0xFF00FF)` and `hook.sendEmbed("Hello sir!", nil, "https://example.com/avatar.jpg")` will work just fine!.
+
+Fill arguments you don't want with `nil`, for example: `hook.sendEmbed("", nil, "Hello!", nil, 0xFF00FF)` and `hook.sendEmbed("Hello sir!", nil, "https://example.com/avatar.jpg")` will work just fine!
+
 A string for `message` is always required, but is allowed to be empty (`""`) when having a valid embed.
