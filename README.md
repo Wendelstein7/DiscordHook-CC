@@ -15,10 +15,11 @@ You can use this library to easily send messages, images, stories, logs and embe
 
 ## Documentation and instructions
 
-Below I will describe the following:
+Below I will show or describe the following:
 1. *Installation*
 2. *Creating a Discord Webhook*
 3. *Using a Discord Webhook with DiscordHook*
+4. *Examples*
 
 ### 1. Installing DiscordHook
 
@@ -74,3 +75,33 @@ All functions return a *boolean* - `true` if the webhook executed without proble
 Fill arguments you don't want with `nil`, for example: `hook.sendEmbed("", nil, "Hello!", nil, 0xFF00FF)` and `hook.sendEmbed("Hello sir!", nil, "https://example.com/avatar.jpg")` will work just fine!
 
 A string for `message` is always required, but is allowed to be empty (`""`) when having a valid embed.
+
+### 4. Examples
+
+Should speak for themselves.
+Code in `test.lua`:
+
+```lua
+local DiscordHook = require("DiscordHook")
+
+local success, hook = DiscordHook.createWebhook("https://discordapp.com/api/webhooks/--removed--")
+if not success then
+    error("Webhook connection failed! Reason: " .. hook)
+end
+
+hook.send("This is just a normal message.", "Your fancy webhook", "https://media.energetic.pw/pm5rod-3pp.jpg")
+
+hook.sendJSON("{ \"content\": \"We're going to have dinner! :pizza:\", \"username\": \"Your beloved mom\", \"avatar_url\": \"https://media.energetic.pw/pm5rsm-cJT.jpg\" }")
+
+hook.sendEmbed("@everyone", "Base Defense System", "An intruder has been detected! User **'HydroNitrogen'** has entered private airspace at `123, 100, 321`! Please send defensive units out now!", nil, 0xFF0000, nil, "https://media.energetic.pw/pm5s32-c9z.png", "Base Defence System", "https://media.energetic.pw/pm5sfo-82l.jpg")
+
+print("So far we've send " .. hook.sentMessages .. " messages succesfully!")
+```
+
+Output in CC:
+
+![shell output](https://media.energetic.pw/pm5slv-aoV.png)
+
+Output in Discord:
+
+![Discord output](https://media.energetic.pw/pm5smr-mKD.png)
