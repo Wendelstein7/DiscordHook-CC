@@ -72,7 +72,7 @@ All functions return a *boolean* - `true` if the webhook executed without proble
 
 **Note:** By Discord's rules, an embed must *atleast* either have a title or description, but not neccecarily both.
 
-Fill arguments you don't want with `nil`, for example: `hook.sendEmbed("", nil, "Hello!", nil, 0xFF00FF)` and `hook.sendEmbed("Hello sir!", nil, "https://example.com/avatar.jpg")` will work just fine!
+Fill arguments you don't want with `nil`, for example: `hook.sendEmbed("", nil, "Hello!", nil, 0xFF00FF)` and `hook.send("Hello sir!", nil, "https://example.com/avatar.jpg")` will work just fine!
 
 A string for `message` is always required, but is allowed to be empty (`""`) when having a valid embed.
 
