@@ -27,7 +27,7 @@ To get the library, simply download the lua file by executing the following in y
 ```
 wget https://raw.githubusercontent.com/Wendelstein7/DiscordHook-CC/master/DiscordHook.lua DiscordHook.lua
 ```
-If you want to use this library as a dependency in a program that you'll distribute, simply make it download `https://github.com/Wendelstein7/DiscordHook-CC/blob/master/DiscordHook.lua` directly if the library isn't found.
+If you want to use this library as a dependency in a program that you'll distribute, simply make it download `https://raw.githubusercontent.com/Wendelstein7/DiscordHook-CC/master/DiscordHook.lua` directly if the library isn't found.
 
 ### 2. Creating a Discord Webhook
 
