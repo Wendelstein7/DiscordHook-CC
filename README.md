@@ -25,7 +25,7 @@ Below I will show or describe the following:
 
 To get the library, simply download the lua file by executing the following in your shell:
 ```
-wget https://github.com/Wendelstein7/DiscordHook-CC/blob/master/DiscordHook.lua DiscordHook.lua
+wget https://raw.githubusercontent.com/Wendelstein7/DiscordHook-CC/master/DiscordHook.lua DiscordHook.lua
 ```
 If you want to use this library as a dependency in a program that you'll distribute, simply make it download `https://github.com/Wendelstein7/DiscordHook-CC/blob/master/DiscordHook.lua` directly if the library isn't found.
 
